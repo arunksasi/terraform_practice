@@ -9,7 +9,7 @@ output "instance_name" {
   
 }
 
-output "subnet_id - public" {
+output "subnet_id_public" {
     
    
 
@@ -18,7 +18,7 @@ output "subnet_id - public" {
 }
 
 
-output "subnet_id -private" {
+output "subnet_id_private" {
 
     value =  [for subnet in module.vpc.aws.subnet.private : subnet.id]
   
