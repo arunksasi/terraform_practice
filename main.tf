@@ -45,7 +45,7 @@ module "vpc" {
 
 resource "aws_instance" "appserver" {
 
-  ami = data.aws_ami.ubuntu 
+  ami = data.aws_ami.ubuntu.id
   instance_type =  var.instance_type
   vpc_security_group_ids = [module.vpc.default_security_group_id]
   subnet_id = module.vpc.public_subnets[2]
