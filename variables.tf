@@ -1,6 +1,6 @@
 # Initialize vpc o module 
 
-module "vpc" {
+module "vpc_main" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "6.4.0"
 }
