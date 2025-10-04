@@ -43,7 +43,7 @@ module "vpc" {
 
 
 
-resource "aws_instance" " appserver" {
+resource "aws_instance" "appserver" {
 
   ami = data.aws_ami.ubuntu 
   instance_type =  var.instance_type
@@ -54,6 +54,6 @@ resource "aws_instance" " appserver" {
 
   name =  "First_Terraform instance"
 
-  
+
  } 
 }
