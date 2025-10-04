@@ -13,13 +13,13 @@ output "subnet_id_public" {
     
    
 
-    value = [for subnet in  module.vpc.aws.subnet.public : subnet.id  ]
+    value =  module.vpc.public_subnets
   
 }
 
 
 output "subnet_id_private" {
 
-    value =  [for subnet in module.vpc.aws.subnet.private : subnet.id]
+    value =   module.vpc.private_subnets 
   
 }
