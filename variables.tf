@@ -29,19 +29,3 @@ variable "region" {
   default     = "us-east-1"
 
 }
-
-
-variable instance_configs{
-
-  description = "Mapings for instance  configurations "
-  type = map(object({
-
-      ami= string
-      instance_type = string
-      key_name =  string
-
-
-  }))
-
- 
-}

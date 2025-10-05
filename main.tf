@@ -59,48 +59,4 @@ resource "aws_instance" "appserver" {
 }
 
 
-resource "aws_instance" "Webservers" {
 
-
-  for_each = var.instance_configs 
-
-  ami = data.aws_ami.ubuntu.id
-  instance_type =  each.value.instance_type
-  vpc_security_group_ids =  [module.vpc.default_security_group_id]
-  key_name = each.value.key_name
-
-    tags = {
-
-    name =  each.key
-  }
- 
-}
-
-
-
-locals {
-  
-  instance_configs = {
-
-    "Webserver1" = {
-
-      
-      instance_type = "t2.micro"
-      key_name      = "Ansible_key_per"
-      ami           = data.aws_ami.ubuntu.id
-
-    } ,
-
-
-    "Webserver2" = {
-
-      instance_type = "t2.micro"
-      key_name = "Ansible_key_per"
-      ami           = data.aws_ami.ubuntu.id
-
-    }
-
-
-  }
-
-}
