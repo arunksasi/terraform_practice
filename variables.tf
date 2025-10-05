@@ -29,3 +29,36 @@ variable "region" {
   default     = "us-east-1"
 
 }
+
+
+variable instance_configs{
+
+  description = "Mapings for instance  configurations "
+  type = map(object({
+
+      ami= string
+      instance_type = string
+      key_name =  string
+
+
+  }))
+
+  default = {
+    "Webserver1" = {
+
+      ami = data.aws_ami.ubuntu.id
+      instance_type = "t2.micro"
+      key_name =  "Ansible_key_per"
+
+
+    },
+
+    "Webserver2" = {
+    ami = data.aws_ami.ubuntu.id
+      instance_type = "t2.micro"
+      key_name =  "Ansible_key_per"
+    }
+  }
+
+
+}
