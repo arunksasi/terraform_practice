@@ -64,7 +64,7 @@ resource "aws_instance" "Webservers" {
 
   for_each = var.instance_configs 
 
-  ami = each.value.ami
+  ami = data.aws_ami.ubuntu.id
   instance_type =  each.value.instance_type
   vpc_security_group_ids =  [module.vpc.default_security_group_id]
   key_name = each.value.key_name
