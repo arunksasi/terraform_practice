@@ -43,21 +43,5 @@ variable instance_configs{
 
   }))
 
-  default = {
-    "Webserver1" = {
-
-      instance_type = "t2.micro"
-      key_name =  "Ansible_key_per"
-
-
-    },
-
-    "Webserver2" = {
-      
-      instance_type = "t2.micro"
-      key_name =  "Ansible_key_per"
-    }
-  }
-
-
+ 
 }

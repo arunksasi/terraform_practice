@@ -78,3 +78,29 @@ resource "aws_instance" "Webservers" {
 
 
 
+locals {
+  
+  instance_configs = {
+
+    "Webserver1" = {
+
+      
+      instance_type = "t2.micro"
+      key_name      = "Ansible_key_per"
+      ami           = data.aws_ami.ubuntu.id
+
+    } ,
+
+
+    "Webserver2" = {
+
+      instance_type = "t2.micro"
+      key_name = "Ansible_key_per"
+      ami           = data.aws_ami.ubuntu.id
+
+    }
+
+
+  }
+
+}
